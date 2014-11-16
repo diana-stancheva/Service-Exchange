@@ -3,13 +3,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ServiceExchange">
-    
+
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/AppResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            
+
             <!-- CUSTOM SHARED STYLES -->
             <Style x:Key="SECenterHorizontalAndVertical" TargetType="TextBox">
                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -20,7 +20,7 @@
                 <Setter Property="Margin" Value="0 0 0 20" />
                 <Setter Property="FontWeight" Value="Bold" />
             </Style>
-            
+
             <Style x:Key="SECenteredContainerStackPanel" TargetType="StackPanel">
                 <Setter Property="Margin" Value="10"/>
                 <Setter Property="VerticalAlignment" Value="Center"/>
@@ -32,10 +32,19 @@
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="FontSize" Value="20"/>
             </Style>
-            
+
             <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrushSolidColor" Color="#4CD864" />
 
-                <!-- OVERRIDE DEFAULT STYLES -->
+            <ControlTemplate x:Key="SETextBoxControlTemplate" TargetType="TextBox">
+                <Grid>
+                    <ContentPresenter
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Margin="4,5,4,4" />
+                </Grid>
+            </ControlTemplate>
+
+            <!-- OVERRIDE DEFAULT STYLES -->
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Default">
                     <!--<SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" Color="#4CD864" />-->

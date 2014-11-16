@@ -15,21 +15,16 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace ServiceExchange
+namespace ServiceExchange.Pages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class LoginPage : Page
+    public sealed partial class SignUpSuccessPage : Page
     {
-        public LoginPage()
+        public SignUpSuccessPage()
         {
             this.InitializeComponent();
-        }
-
-        private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(SignUpPage));
         }
     }
 }

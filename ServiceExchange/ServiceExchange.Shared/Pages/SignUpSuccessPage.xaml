@@ -1,8 +1,8 @@
 ﻿<Page
-    x:Class="ServiceExchange.SignUpSuccessPage"
+    x:Class="ServiceExchange.Pages.SignUpSuccessPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ServiceExchange"
+    xmlns:local="using:ServiceExchange.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -11,7 +11,7 @@
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrushSolidColor}">
             <StackPanel Style="{StaticResource SECenteredContainerStackPanel}">
                 <TextBlock Text="Hooray!" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 20"/>
-                <TextBlock Text="Your account is up and running and you're ready to start browsing the awesome changes." Margin="0 0 0 20" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                <TextBlock Text="Your account is up and running and you're ready to start browsing the awesome changes." HorizontalAlignment="Center" Margin="0 0 0 20" Style="{StaticResource SubheaderTextBlockStyle}"/>
                 <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Background="White" Foreground="#4CD864" FontWeight="Bold">OK</Button>
                 <TextBlock Text="Need Help?" Margin="0 100 0 0" Style="{StaticResource BottomTextBlockDarkStyleCentered}"/>
                 <TextBlock Text="Check out the How-To Guide" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold"/>
