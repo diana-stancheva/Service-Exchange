@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="f4931ffa-4ff8-4621-af3a-5bb171b5d161" Publisher="CN=Diana" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>ServiceExchange.Windows</DisplayName>
+    <PublisherDisplayName>Diana</PublisherDisplayName>
+    <Logo>Assets\service_logo-50.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ServiceExchange.Windows.App">
+      <m2:VisualElements DisplayName="ServiceExchange.Windows" Square150x150Logo="Assets\service_logo-150.png" Square30x30Logo="Assets\service_logo-30.png" Description="ServiceExchange.Windows" ForegroundText="light" BackgroundColor="#4CD864">
+        <m2:DefaultTile Square70x70Logo="Assets\service_logo-70.png" Wide310x150Logo="Assets\service_logo310x150.png" Square310x310Logo="Assets\service_logo-310.png">
+        </m2:DefaultTile>
+        <m2:SplashScreen Image="Assets\service_splash_screen2.png" BackgroundColor="#4CD864" />
+      </m2:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

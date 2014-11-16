@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="cedab362-5a29-469e-8ef3-adecb756efe5" Publisher="CN=Diana" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="cedab362-5a29-469e-8ef3-adecb756efe5" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>ServiceExchange.WindowsPhone</DisplayName>
+    <PublisherDisplayName>Diana</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ServiceExchange.WindowsPhone.App">
+      <m3:VisualElements DisplayName="ServiceExchange.WindowsPhone" Square150x150Logo="Assets\service_logo-150.png" Square44x44Logo="Assets/service_logo-44.png" Description="ServiceExchange.WindowsPhone" ForegroundText="light" BackgroundColor="#4CD864">
+        <m3:DefaultTile Wide310x150Logo="Assets\service_logo310x150.png" Square71x71Logo="Assets\service_logo-71.png">
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="Assets\service_splash_screen.png" BackgroundColor="#4CD864" />
+      </m3:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+  </Capabilities>
+</Package>

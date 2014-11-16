@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="ServiceExchange.SignUpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ServiceExchange"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ScrollViewer>
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <StackPanel Style="{StaticResource SECenteredContainerStackPanel}">
+                <TextBlock Text="Create new account" Style="{StaticResource SEWelcomeTextBlockAppTitle}" />
+                <TextBlock Text="ServiceExchange" Style="{StaticResource SELoginTextBlockAppTitle}" />
+
+                <TextBox PlaceholderText="Username" Style="{StaticResource SETextBox}" />
+                <PasswordBox PlaceholderText="Password" Style="{StaticResource SEPasswordBox}" />
+                <PasswordBox PlaceholderText="Re-Type Password" Style="{StaticResource SEPasswordBox}"  />
+                <TextBox PlaceholderText="Email" Style="{StaticResource SETextBox}" />
+                <TextBox PlaceholderText="Country" Style="{StaticResource SETextBox}" />
+                <TextBox PlaceholderText="Town" Style="{StaticResource SETextBox}" />
+                <Button Content="Sign Up" Style="{StaticResource SELoginButton}" Click="Button_Click" />
+
+                <TextBlock Text="You already have an account?" Style="{StaticResource BottomTextBlockDarkStyleCentered}" Margin="0 80 0 0" />
+                <TextBlock Text="Back to login page" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold" Tapped="TextBlock_Tapped"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
