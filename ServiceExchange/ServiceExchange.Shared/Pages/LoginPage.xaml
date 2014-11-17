@@ -13,12 +13,12 @@
                 <TextBlock Text="Welcome to" Style="{StaticResource SEWelcomeTextBlockAppTitle}" />
                 <TextBlock Text="ServiceExchange" Style="{StaticResource SELoginTextBlockAppTitle}" />
 
-                <TextBox PlaceholderText="Username" Style="{StaticResource SETextBox}"/>
-                <PasswordBox PlaceholderText="Password" Style="{StaticResource SEPasswordBox}"  />
+                <TextBox Name="username" PlaceholderText="Username" Style="{StaticResource SETextBox}"/>
+                <PasswordBox Name="password" PlaceholderText="Password" Style="{StaticResource SEPasswordBox}"  />
                 <Button Content="Login" Style="{StaticResource SELoginButton}" Click="Button_Click" />
 
                 <TextBlock Text="New to ServiceExchange?" Margin="0 100 0 0" Style="{StaticResource BottomTextBlockDarkStyleCentered}" />
-                <TextBlock Text="SignUp Now!" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold" Tapped="TextBlock_Tapped"/>
+                <TextBlock Text="SignUp Now!" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold" Tapped="SignUpTextBlock_Tapped"/>
             </StackPanel>
         </Grid>
     </ScrollViewer>

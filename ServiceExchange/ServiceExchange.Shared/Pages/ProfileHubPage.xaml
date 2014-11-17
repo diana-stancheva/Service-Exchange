@@ -11,7 +11,9 @@
         <Hub Header="My Profile">
             <HubSection Header="Information">
                 <DataTemplate>
-                    <Grid/>
+                    <Grid>
+                        <ListBox ItemsSource="{Binding}"/>
+                    </Grid>
                 </DataTemplate>
             </HubSection>
             <HubSection Header="Skills">

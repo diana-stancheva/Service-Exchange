@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ServiceExchange.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.Serialization.Json;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -12,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
+using Parse;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,14 +31,33 @@ namespace ServiceExchange.Pages
             this.InitializeComponent();
         }
 
-        private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)
+        private void LogInTextBlock_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(LoginPage));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public async void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SignUpSuccessPage));
+            var user = new UserModel()
+            {
+                Username = this.username.Text,
+                Password = this.password.Password,
+                Email = this.email.Text,
+                FullName = this.fullName.Text,
+                Country = this.country.Text,
+                Town = this.town.Text
+            };
+
+            try
+            {
+                await user.SignUpAsync();
+                this.Frame.Navigate(typeof(SignUpSuccessPage));
+            }
+            catch (Exception ex)
+            {
+                var dialog = new MessageDialog(ex.Message);
+                dialog.ShowAsync();
+            }
         }
     }
 }

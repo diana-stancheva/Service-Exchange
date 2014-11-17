@@ -15,8 +15,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\OffersHubPage.xaml.cs">
+      <DependentUpon>OffersHubPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ProfileHubPage.xaml.cs">
       <DependentUpon>ProfileHubPage.xaml</DependentUpon>
@@ -29,15 +33,19 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ExchangeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OfferViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SignUpViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SkillViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)CustomControls\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\OffersHubPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

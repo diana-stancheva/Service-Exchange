@@ -11,17 +11,18 @@
             <StackPanel Style="{StaticResource SECenteredContainerStackPanel}">
                 <TextBlock Text="Create new account" Style="{StaticResource SEWelcomeTextBlockAppTitle}" />
                 <TextBlock Text="ServiceExchange" Style="{StaticResource SELoginTextBlockAppTitle}" />
-
-                <TextBox PlaceholderText="Username" Style="{StaticResource SETextBox}" />
-                <PasswordBox PlaceholderText="Password" Style="{StaticResource SEPasswordBox}" />
-                <PasswordBox PlaceholderText="Re-Type Password" Style="{StaticResource SEPasswordBox}"  />
-                <TextBox PlaceholderText="Email" Style="{StaticResource SETextBox}" />
-                <TextBox PlaceholderText="Country" Style="{StaticResource SETextBox}" />
-                <TextBox PlaceholderText="Town" Style="{StaticResource SETextBox}" />
-                <Button Content="Sign Up" Style="{StaticResource SELoginButton}" Click="Button_Click" />
+                
+                <TextBox Name="fullName" PlaceholderText="FullName" Style="{StaticResource SETextBox}" />
+                <TextBox Name="username" PlaceholderText="Username" Style="{StaticResource SETextBox}" />
+                <PasswordBox Name="password" PlaceholderText="Password" Style="{StaticResource SEPasswordBox}" />
+                <PasswordBox Name="password2" PlaceholderText="Re-Type Password" Style="{StaticResource SEPasswordBox}"  />
+                <TextBox Name="email" PlaceholderText="Email" Style="{StaticResource SETextBox}" />
+                <TextBox Name="country" PlaceholderText="Country" Style="{StaticResource SETextBox}" />
+                <TextBox Name="town" PlaceholderText="Town" Style="{StaticResource SETextBox}" />
+                <Button Content="Sign Up" Style="{StaticResource SELoginButton}" Click="SignUpButton_Click" />
 
                 <TextBlock Text="You already have an account?" Style="{StaticResource BottomTextBlockDarkStyleCentered}" Margin="0 80 0 0" />
-                <TextBlock Text="Back to login page" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold" Tapped="TextBlock_Tapped"/>
+                <TextBlock Text="Back to login page" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold" Tapped="LogInTextBlock_Tapped"/>
             </StackPanel>
         </Grid>
     </ScrollViewer>
