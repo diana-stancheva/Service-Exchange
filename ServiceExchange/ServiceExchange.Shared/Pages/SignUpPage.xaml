@@ -22,7 +22,7 @@
                 <Button Content="Sign Up" Style="{StaticResource SELoginButton}" Click="SignUpButton_Click" />
 
                 <TextBlock Text="You already have an account?" Style="{StaticResource BottomTextBlockDarkStyleCentered}" Margin="0 80 0 0" />
-                <TextBlock Text="Back to login page" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold" Tapped="LogInTextBlock_Tapped"/>
+                <TextBlock Text="Back to login page" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold" Tapped="TextBlock_Tapped"/>
             </StackPanel>
         </Grid>
     </ScrollViewer>

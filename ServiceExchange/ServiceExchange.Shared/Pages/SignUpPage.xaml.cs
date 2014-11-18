@@ -31,14 +31,14 @@ namespace ServiceExchange.Pages
             this.InitializeComponent();
         }
 
-        private void LogInTextBlock_Tapped(object sender, TappedRoutedEventArgs e)
+        private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(LoginPage));
         }
 
         public async void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
-            var user = new UserModel()
+            var user = new User()
             {
                 Username = this.username.Text,
                 Password = this.password.Password,

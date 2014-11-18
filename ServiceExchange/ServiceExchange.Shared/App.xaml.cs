@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Parse;
+using ServiceExchange.Models;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -39,6 +40,14 @@ namespace ServiceExchange
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
+
+            ParseObject.RegisterSubclass<Comment>();
+            ParseObject.RegisterSubclass<Country>();
+            ParseObject.RegisterSubclass<Exchange>();
+            ParseObject.RegisterSubclass<ExchangeStatus>();
+            ParseObject.RegisterSubclass<Skill>();
+            ParseObject.RegisterSubclass<SkillCategory>();
+
             ParseClient.Initialize("DVvnKXAPipSK6tGdm1jBvhqrtGfSWdXXcE7fm7N1", "HIBcA194aFHdPDU6CTVU01UD4O7URq3AEAATHptf");
         }
 

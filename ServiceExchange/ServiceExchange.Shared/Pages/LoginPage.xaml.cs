@@ -31,7 +31,7 @@ namespace ServiceExchange.Pages
             this.DataContext = Parse.ParseUser.CurrentUser;
         }
 
-        private void SignUpTextBlock_Tapped(object sender, TappedRoutedEventArgs e)
+        private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(SignUpPage));
         }

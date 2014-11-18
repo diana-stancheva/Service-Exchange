@@ -18,7 +18,7 @@
                 <Button Content="Login" Style="{StaticResource SELoginButton}" Click="Button_Click" />
 
                 <TextBlock Text="New to ServiceExchange?" Margin="0 100 0 0" Style="{StaticResource BottomTextBlockDarkStyleCentered}" />
-                <TextBlock Text="SignUp Now!" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold" Tapped="SignUpTextBlock_Tapped"/>
+                <TextBlock Text="SignUp Now!" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold" Tapped="TextBlock_Tapped"/>
             </StackPanel>
         </Grid>
     </ScrollViewer>

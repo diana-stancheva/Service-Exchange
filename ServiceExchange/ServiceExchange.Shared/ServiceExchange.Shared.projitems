@@ -15,12 +15,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Models\UserModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Comment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Country.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Exchange.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ExchangeStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Skill.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SkillCategory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\OffersHubPage.xaml.cs">
-      <DependentUpon>OffersHubPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ProfileHubPage.xaml.cs">
       <DependentUpon>ProfileHubPage.xaml</DependentUpon>
@@ -30,6 +33,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SignUpSuccessPage.xaml.cs">
       <DependentUpon>SignUpSuccessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\StepTwoRegistrationPage.xaml.cs">
+      <DependentUpon>StepTwoRegistrationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ExchangeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OfferViewModel.cs" />
@@ -45,10 +51,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Pages\OffersHubPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Pages\ProfileHubPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -58,6 +60,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Pages\SignUpSuccessPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\StepTwoRegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
