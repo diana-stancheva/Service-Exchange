@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ServiceExchange.Models;
 using Parse;
+using ServiceExchange.ViewModels;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -28,7 +29,7 @@ namespace ServiceExchange.Pages
         public LoginPage()
         {
             this.InitializeComponent();
-            this.DataContext = Parse.ParseUser.CurrentUser;
+            //this.DataContext = Parse.ParseUser.CurrentUser;
         }
 
         private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)
@@ -50,8 +51,6 @@ namespace ServiceExchange.Pages
                 var dialog = new MessageDialog(ex.Message);
                 dialog.ShowAsync();
             }
-
-            
         }
     }
 }

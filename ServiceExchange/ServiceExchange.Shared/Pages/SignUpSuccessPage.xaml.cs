@@ -26,7 +26,7 @@ namespace ServiceExchange.Pages
         public SignUpSuccessPage()
         {
             this.InitializeComponent();
-            var fullname = Parse.ParseUser.CurrentUser.Get<string>("FullName");
+            //var fullname = Parse.ParseUser.CurrentUser.Get<string>("fullName");
         }
     }
 }

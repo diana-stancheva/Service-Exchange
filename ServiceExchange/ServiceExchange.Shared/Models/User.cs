@@ -15,7 +15,6 @@ namespace ServiceExchange.Models
             set { SetProperty<string>(value); }
         }
 
-
         [ParseFieldName("country")]
         public string Country
         {
@@ -35,6 +34,20 @@ namespace ServiceExchange.Models
         {
             get { return GetProperty<int>(); }
             set { SetProperty<int>(value); }
+        }
+
+        [ParseFieldName("photo")]
+        public ParseFile Photo
+        {
+            get { return GetProperty<ParseFile>(); }
+            set { SetProperty<ParseFile>(value); }
+        }
+
+        [ParseFieldName("mobilePhone")]
+        public string MobilePhone
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
         }
     }
 }

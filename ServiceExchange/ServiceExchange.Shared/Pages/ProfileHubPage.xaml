@@ -5,14 +5,62 @@
     xmlns:local="using:ServiceExchange.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:ServiceExchange.Converters"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Hub Header="My Profile">
-            <HubSection Header="Information">
+        <Grid.Resources>
+            <converters:CountryTownConverter x:Key="CountryTownConverter"/>
+        </Grid.Resources>
+        <Hub Header="ServiceExchange Profile">
+            <HubSection Width="500" Header="ServiceExchange Profile">
                 <DataTemplate>
-                    <Grid>
-                        <ListBox ItemsSource="{Binding}"/>
+                    <Grid DataContext="{Binding CurrentUser}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="250" />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="70" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Ellipse Grid.Row="0" Grid.ColumnSpan="2" Height="200" Width="200" Stroke="#666666" StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="../Images/profilePicture.jpg" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <!--<Image Stretch="UniformToFill" Grid.Row="0" Grid.Column="0" Source="../Images/profilePicture.jpg" Width="300" Height="250"></Image>-->
+                        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource BaseTextBlockStyle}" Text="{Binding FullName}" Foreground="#666666" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BaseTextBlockStyle}" Text="{Binding Converter={StaticResource CountryTownConverter}}" Foreground="#666666" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 20"/>
+
+                        <AppBarButton Grid.Row="3" Grid.Column="0" Icon="Contact" VerticalAlignment="Center" />
+                        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="My Username"/>
+                            <TextBlock FontSize="22" Text="{Binding Username}" Margin="0 5 0 0"/>
+                        </StackPanel>
+
+                        <AppBarButton Grid.Row="4" Grid.Column="0" Icon="Mail" VerticalAlignment="Center" />
+                        <StackPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Email"/>
+                            <TextBlock FontSize="22" Text="{Binding Email}" Margin="0 5 0 0"/>
+                        </StackPanel>
+
+                        <AppBarButton Grid.Row="5" Grid.Column="0" Icon="Phone" VerticalAlignment="Center" />
+                        <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Mobile"/>
+                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" FontSize="22" Text="{Binding MobilePhone}" Margin="0 5 0 0"/>
+                        </StackPanel>
+
+                        <!--<AppBarButton Grid.Row="5" Grid.Column="0" Icon="Message" VerticalAlignment="Center" />
+                        <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="Send Message"/>
+                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="{Binding Email}"/>
+                        </StackPanel>-->
+
                     </Grid>
                 </DataTemplate>
             </HubSection>
@@ -27,6 +75,5 @@
                 </DataTemplate>
             </HubSection>
         </Hub>
-
     </Grid>
 </Page>

@@ -1,5 +1,4 @@
-﻿using ServiceExchange.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,6 +17,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Parse;
 using ServiceExchange.Models;
+using ServiceExchange.Pages;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 

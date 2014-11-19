@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CountryTownConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Comment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Country.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Exchange.cs" />
@@ -34,12 +35,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SignUpSuccessPage.xaml.cs">
       <DependentUpon>SignUpSuccessPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\StepTwoRegistrationPage.xaml.cs">
-      <DependentUpon>StepTwoRegistrationPage.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AppViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ExchangeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OfferViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SignUpViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SkillCategoryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SkillViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserViewModel.cs" />
   </ItemGroup>
@@ -63,9 +63,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Pages\StepTwoRegistrationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Images\profilePicture.jpg" />
   </ItemGroup>
 </Project>
