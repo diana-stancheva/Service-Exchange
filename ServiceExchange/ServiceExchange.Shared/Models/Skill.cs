@@ -39,10 +39,10 @@ namespace ServiceExchange.Models
         }
 
         [ParseFieldName("user")]
-        public User User
+        public ParseUser User
         {
-            get { return GetProperty<User>(); }
-            set { SetProperty<User>(value); }
+            get { return GetProperty<ParseUser>(); }
+            set { SetProperty<ParseUser>(value); }
         }
     }
 }

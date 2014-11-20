@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:converters="using:ServiceExchange.Converters"
+    xmlns:views="using:ServiceExchange.Views"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -13,9 +14,9 @@
             <converters:CountryTownConverter x:Key="CountryTownConverter"/>
         </Grid.Resources>
         <Hub Header="ServiceExchange Profile">
-            <HubSection Width="500" Header="ServiceExchange Profile">
+            <HubSection Header="Information">
                 <DataTemplate>
-                    <Grid DataContext="{Binding CurrentUser}">
+                    <Grid Width="500" DataContext="{Binding CurrentUser}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="250" />
                             <RowDefinition />
@@ -33,13 +34,13 @@
                                 <ImageBrush ImageSource="../Images/profilePicture.jpg" />
                             </Ellipse.Fill>
                         </Ellipse>
-                        <!--<Image Stretch="UniformToFill" Grid.Row="0" Grid.Column="0" Source="../Images/profilePicture.jpg" Width="300" Height="250"></Image>-->
+                        <!--<Image Stretch="UniformToFill" Grid.Row="0" Grid.ColumnSpan="2" Source="../Images/profilePicture.jpg" Width="400" Height="250"></Image>-->
                         <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource BaseTextBlockStyle}" Text="{Binding FullName}" Foreground="#666666" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center"/>
                         <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BaseTextBlockStyle}" Text="{Binding Converter={StaticResource CountryTownConverter}}" Foreground="#666666" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 20"/>
 
                         <AppBarButton Grid.Row="3" Grid.Column="0" Icon="Contact" VerticalAlignment="Center" />
                         <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
-                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="My Username"/>
+                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Username"/>
                             <TextBlock FontSize="22" Text="{Binding Username}" Margin="0 5 0 0"/>
                         </StackPanel>
 
@@ -64,9 +65,11 @@
                     </Grid>
                 </DataTemplate>
             </HubSection>
-            <HubSection Header="Skills">
+            <HubSection Header="Skills" Width="500">
                 <DataTemplate>
-                    <Grid/>
+                    <Grid>
+                        <Button Width="500" Height="70">Add Skill</Button>
+                    </Grid>
                 </DataTemplate>
             </HubSection>
             <HubSection Header="Exchanges">
