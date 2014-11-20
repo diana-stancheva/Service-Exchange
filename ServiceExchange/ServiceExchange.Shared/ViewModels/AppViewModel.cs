@@ -7,15 +7,47 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace ServiceExchange.ViewModels
 {
     public class AppViewModel : ViewModelBase
     {
-        public User CurrentUser { get; set; }
-        public IEnumerable<SkillCategoryViewModel> SkillCategory { get; set; }
+        private ObservableCollection<SkillViewModel> skills;
+
 
         public AppViewModel()
+        {
+            this.GetCurrentUser();
+            this.LoadSkills();
+        }
+
+        public User CurrentUser { get; set; }
+
+        public IEnumerable<SkillViewModel> Skills { 
+            get
+            {
+                if (this.skills == null)
+                {
+                    this.Skills = new ObservableCollection<SkillViewModel>();
+                }
+                return this.skills;
+            } 
+            set 
+            {
+                if (this.skills == null)
+                {
+                    this.skills = new ObservableCollection<SkillViewModel>();
+                }
+                this.skills.Clear();
+                foreach (var item in value)
+                {
+                    this.skills.Add(item);
+                }
+            } 
+        }
+
+        private void GetCurrentUser()
         {
             this.CurrentUser = new User
             {
@@ -26,18 +58,15 @@ namespace ServiceExchange.ViewModels
                 Town = ParseUser.CurrentUser.Get<string>("town"),
                 MobilePhone = ParseUser.CurrentUser.Get<string>("mobilePhone")
             };
-            
-            //LoadSkillCategories();
-
-            
         }
 
-        public async Task LoadSkillCategories()
+        private async Task LoadSkills()
         {
-            var categories = await new ParseQuery<SkillCategory>().FindAsync();
-            this.SkillCategory = categories.AsQueryable().Select(SkillCategoryViewModel.FromModel);
+            //var skills = await new ParseQuery<Skill>().FindAsync();
+            //this.Skills = skills.AsQueryable().Select(SkillViewModel.FromModel);
+
+            var skills = await new ParseQuery<Skill>().FindAsync();
+            this.Skills = skills.AsQueryable().Select(SkillViewModel.FromModel);
         }
-
-
     }
 }
