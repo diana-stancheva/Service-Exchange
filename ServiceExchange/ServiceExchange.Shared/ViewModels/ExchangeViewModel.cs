@@ -10,6 +10,6 @@ namespace ServiceExchange.ViewModels
         public SkillViewModel OtherSkill { get; set; }
         public UserViewModel User { get; set; }
         public string ExchangeStatus { get; set; }
-        //todo comment to exchange
+        //todo comment for exchange
     }
 }

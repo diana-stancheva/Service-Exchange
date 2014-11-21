@@ -12,7 +12,7 @@
             <StackPanel Style="{StaticResource SECenteredContainerStackPanel}">
                 <TextBlock Text="Hooray!" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 20"/>
                 <TextBlock Text="Your account is up and running and you're ready to start browsing the awesome changes." HorizontalAlignment="Center" Margin="0 0 0 20" Style="{StaticResource SubheaderTextBlockStyle}"/>
-                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Background="White" Foreground="#4CD864" FontWeight="Bold">OK</Button>
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Background="White" Foreground="#4CD864" FontWeight="Bold" Click="Button_Click">OK</Button>
                 <TextBlock Text="Need Help?" Margin="0 100 0 0" Style="{StaticResource BottomTextBlockDarkStyleCentered}"/>
                 <TextBlock Text="Check out the How-To Guide" Style="{StaticResource BottomTextBlockDarkStyleCentered}" FontWeight="Bold"/>
             </StackPanel>

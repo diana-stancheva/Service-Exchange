@@ -68,7 +68,7 @@
             <HubSection Header="Skills" Width="700">
                 <DataTemplate x:Name="sectionSkills">
                     <StackPanel>
-                        <AppBarButton Margin="45 -65 0 0" Icon="Add" Width="70" Height="70" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Click="OnShowPopup" />
+                        <!--<AppBarButton Margin="0 -12 0 0" Icon="Add" Width="70" Height="70" Click="OnShowPopup" HorizontalAlignment="Right" />-->
                         <Popup x:Name="AddSkillPopup" VerticalOffset="5" Loaded="AddSkillPopup_Loaded">
                             <StackPanel Width="500"
                                 Background="#666666"
@@ -80,9 +80,6 @@
                                     <ComboBoxItem>Animals</ComboBoxItem>
                                     <ComboBoxItem>Home</ComboBoxItem>
                                     <ComboBoxItem>Lifestyle</ComboBoxItem>
-                                    <ComboBoxItem>Design</ComboBoxItem>
-                                    <ComboBoxItem>Computers Software</ComboBoxItem>
-                                    <ComboBoxItem>Computers Hardware</ComboBoxItem>
                                 </ComboBox>
 
                                 <Button 
@@ -97,43 +94,42 @@
                                     Click="OnClosePopup"
                                     HorizontalAlignment="Stretch"/>
                             </StackPanel>
-                        </Popup>                        <Grid Width="500">
+                        </Popup>                        
+                        <!--<Grid Width="500">
                             <GridView x:Name="skillsGridView" IsItemClickEnabled="True" ItemsSource="{Binding Skills}">
                                 <GridView.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <ItemsWrapGrid Margin="3" ItemWidth="200" Orientation="Horizontal" MaximumRowsOrColumns="2" />
+                                        <ItemsWrapGrid Margin="3" ItemWidth="240" Orientation="Horizontal" MaximumRowsOrColumns="2"/>
                                     </ItemsPanelTemplate>
                                 </GridView.ItemsPanel>
                                 <GridView.ItemTemplate>
                                     <DataTemplate>
-                                        <StackPanel>
-                                            <TextBlock TextAlignment="Left" Text="{Binding Name}" FontSize="25" Foreground="#666666"/>
-                                            <TextBlock TextAlignment="Left" Text="{Binding Description}" Margin="5 0 0 0" FontSize="25" Foreground="#666666"/>
-                                        </StackPanel>
+                                        <GridViewItem Background="#FF00ABA9" Margin="0" Width="240" Padding="10" Tapped="GridViewItem_Tapped">
+                                        <StackPanel HorizontalAlignment="Left">
+                                                <TextBlock TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
+                                            </StackPanel>
+                                        </GridViewItem>
                                     </DataTemplate>
                                 </GridView.ItemTemplate>
-                            </GridView>
-                        </Grid>
-                        <!--<Grid Width="500" >
-                            <GridView ItemsSource="{Binding Skills}">
-                                <GridView.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="{Binding Name}"/>
-                                            <TextBlock Text="{Binding Description}"
-                                                   Margin="5 0 0 0"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </GridView.ItemTemplate>
-
-                                <GridView.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <WrapGrid MaximumRowsOrColumns="2" Orientation="Horizontal" HorizontalChildrenAlignment="Stretch" VerticalChildrenAlignment="Stretch">
-                                        </WrapGrid>
-                                    </ItemsPanelTemplate>
-                                </GridView.ItemsPanel>
                             </GridView>
                         </Grid>-->
+                        <ListView ItemsSource="{Binding Skills}" SelectionChanged="ListView_SelectionChanged">
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsWrapGrid Margin="3" ItemWidth="240" Orientation="Horizontal" MaximumRowsOrColumns="2"/>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ListViewItem Background="#FF00ABA9" Margin="0" Width="240" Padding="10">
+                                        <StackPanel HorizontalAlignment="Left">
+                                            <TextBlock TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackPanel>
                 </DataTemplate>
             </HubSection>
@@ -144,4 +140,16 @@
             </HubSection>
         </Hub>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="Refresh" Icon="Refresh" />
+            <AppBarButton Label="Help" Icon="Help"/>
+
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Edit Skill"  Icon="Edit" />
+                <AppBarButton Label="Remove Skill" Icon="Remove"/>
+                <AppBarButton Label="Add Skill" Icon="Add" Click="OnShowPopup" />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

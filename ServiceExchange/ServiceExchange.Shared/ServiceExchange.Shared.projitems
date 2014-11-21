@@ -26,16 +26,19 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\OffersHubPage.xaml.cs">
+      <DependentUpon>OffersHubPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SignUpPage.xaml.cs">
       <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SignUpSuccessPage.xaml.cs">
       <DependentUpon>SignUpSuccessPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AppViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OffersHubPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileHubPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ExchangeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OfferViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SignUpViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SkillCategoryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SkillViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserViewModel.cs" />
@@ -48,6 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\OffersHubPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

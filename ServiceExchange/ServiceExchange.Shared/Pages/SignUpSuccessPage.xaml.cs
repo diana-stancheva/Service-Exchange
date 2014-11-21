@@ -26,7 +26,11 @@ namespace ServiceExchange.Pages
         public SignUpSuccessPage()
         {
             this.InitializeComponent();
-            //var fullname = Parse.ParseUser.CurrentUser.Get<string>("fullName");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(OffersHubPage));
         }
     }
 }

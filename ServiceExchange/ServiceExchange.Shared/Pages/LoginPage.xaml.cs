@@ -43,7 +43,7 @@ namespace ServiceExchange.Pages
             {
                 await ParseUser.LogInAsync(this.username.Text, this.password.Password);
                 // Login was successful.
-                this.Frame.Navigate(typeof(ProfileHubPage));
+                this.Frame.Navigate(typeof(OffersHubPage));
             }
             catch (Exception ex)
             {

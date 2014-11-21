@@ -9,6 +9,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -34,8 +35,8 @@ namespace ServiceExchange.Pages
         public ProfileHubPage()
         {
             this.InitializeComponent();
-            this.DataContext = new AppViewModel();
-        }        
+            this.DataContext = new ProfileHubPageViewModel();
+        }
 
         private void OnSavePopup(object sender, RoutedEventArgs e)
         {
@@ -71,7 +72,8 @@ namespace ServiceExchange.Pages
             if (!this.AddSkillPopup.IsOpen) this.AddSkillPopup.IsOpen = true;
         }
 
-        private void ErasePopupSelectedValues(){
+        private void ErasePopupSelectedValues()
+        {
             this.SkillName.Text = "";
             this.SkillDescription.Text = "";
             this.CategoryName.SelectedIndex = 0;
@@ -95,6 +97,30 @@ namespace ServiceExchange.Pages
         private void CategoryNameComboBox_Loaded(object sender, RoutedEventArgs e)
         {
             this.CategoryName = (ComboBox)sender;
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listView = sender as ListView;
+
+            if (listView == null)
+            {
+                return;
+            }
+
+            if (this.BottomAppBar != null)
+            {
+                if (this.BottomAppBar.IsOpen == true)
+                {
+                    this.BottomAppBar.IsOpen = false;
+                }
+                else
+                {
+                    this.BottomAppBar.IsOpen = true;
+                }
+
+
+            }
         }
     }
 }

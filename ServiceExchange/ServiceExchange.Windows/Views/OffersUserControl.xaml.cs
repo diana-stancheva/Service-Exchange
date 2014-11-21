@@ -17,9 +17,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace ServiceExchange.Views
 {
-    public sealed partial class InformationControl : UserControl
+    public sealed partial class OffersUserControl : UserControl
     {
-        public InformationControl()
+        public OffersUserControl()
         {
             this.InitializeComponent();
         }

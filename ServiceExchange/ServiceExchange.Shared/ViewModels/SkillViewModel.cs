@@ -17,7 +17,8 @@ namespace ServiceExchange.ViewModels
                     {
                         Name = skill.Name,
                         Category = skill.SkillCategory.Name,
-                        Description = skill.Description
+                        Description = skill.Description,
+                        User = skill.User.Username
                     };
             }
         }
@@ -25,5 +26,6 @@ namespace ServiceExchange.ViewModels
         public string Name { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
+        public string User { get; set; }
     }
 }

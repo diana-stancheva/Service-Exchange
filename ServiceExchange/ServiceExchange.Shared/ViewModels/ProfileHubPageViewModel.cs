@@ -11,18 +11,30 @@ using System.Collections.ObjectModel;
 
 namespace ServiceExchange.ViewModels
 {
-    public class AppViewModel : ViewModelBase
+    public class ProfileHubPageViewModel : ViewModelBase
     {
         private ObservableCollection<SkillViewModel> skills;
+        private bool loader;
 
-
-        public AppViewModel()
+        public ProfileHubPageViewModel()
         {
             this.GetCurrentUser();
             this.LoadSkills();
         }
 
         public User CurrentUser { get; set; }
+
+        public bool Loader { 
+            get 
+            {
+                return this.loader;
+            } 
+            set 
+            {
+                this.loader = value;
+                this.RaisePropertyChanged(() => this.Loader);
+            } 
+        }
 
         public IEnumerable<SkillViewModel> Skills { 
             get
@@ -39,11 +51,14 @@ namespace ServiceExchange.ViewModels
                 {
                     this.skills = new ObservableCollection<SkillViewModel>();
                 }
+
                 this.skills.Clear();
                 foreach (var item in value)
                 {
                     this.skills.Add(item);
                 }
+
+                this.RaisePropertyChanged(() => this.Skills);
             } 
         }
 
@@ -62,9 +77,6 @@ namespace ServiceExchange.ViewModels
 
         private async Task LoadSkills()
         {
-            //var skills = await new ParseQuery<Skill>().FindAsync();
-            //this.Skills = skills.AsQueryable().Select(SkillViewModel.FromModel);
-
             var skills = await new ParseQuery<Skill>().FindAsync();
             this.Skills = skills.AsQueryable().Select(SkillViewModel.FromModel);
         }

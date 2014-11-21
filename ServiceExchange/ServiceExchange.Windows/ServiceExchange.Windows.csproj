@@ -111,8 +111,8 @@
       <DependentUpon>ProfileHubPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\InformationControl.xaml.cs">
-      <DependentUpon>InformationControl.xaml</DependentUpon>
+    <Compile Include="Views\OffersUserControl.xaml.cs">
+      <DependentUpon>OffersUserControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -148,7 +148,7 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
-    <Page Include="Views\InformationControl.xaml">
+    <Page Include="Views\OffersUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
