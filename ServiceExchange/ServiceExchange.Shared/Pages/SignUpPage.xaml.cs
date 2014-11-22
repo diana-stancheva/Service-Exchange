@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
 using Parse;
+using ServiceExchange.Common;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,6 +30,7 @@ namespace ServiceExchange.Pages
         public SignUpPage()
         {
             this.InitializeComponent();
+            NetworkChecker.CheckInternetConnection();
         }
 
         private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)

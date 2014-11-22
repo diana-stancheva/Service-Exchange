@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceExchange.Common;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace ServiceExchange.Pages
         public MainPage()
         {
             this.InitializeComponent();
+            NetworkChecker.CheckInternetConnection();
         }
 
         private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)

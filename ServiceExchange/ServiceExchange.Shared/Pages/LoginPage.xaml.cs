@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Navigation;
 using ServiceExchange.Models;
 using Parse;
 using ServiceExchange.ViewModels;
+using ServiceExchange.Common;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,6 +30,7 @@ namespace ServiceExchange.Pages
         public LoginPage()
         {
             this.InitializeComponent();
+            NetworkChecker.CheckInternetConnection();
             //this.DataContext = Parse.ParseUser.CurrentUser;
         }
 

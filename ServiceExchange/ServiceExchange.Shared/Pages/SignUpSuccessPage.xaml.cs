@@ -1,4 +1,5 @@
-﻿using ServiceExchange.Models;
+﻿using ServiceExchange.Common;
+using ServiceExchange.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,6 +27,7 @@ namespace ServiceExchange.Pages
         public SignUpSuccessPage()
         {
             this.InitializeComponent();
+            NetworkChecker.CheckInternetConnection();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

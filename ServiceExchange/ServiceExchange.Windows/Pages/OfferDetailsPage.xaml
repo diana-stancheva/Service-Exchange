@@ -8,12 +8,38 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Hub Header="Offer Details">
+        <Hub>
+            <Hub.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Style="{StaticResource NavigationBackButtonNormalStyle}"
+                            VerticalAlignment="Top"
+                            AutomationProperties.Name="Back"
+                            AutomationProperties.AutomationId="BackButton"
+                            AutomationProperties.ItemType="Navigation Button"
+                            Click="BackButton_Click"/>
+                    <TextBlock x:Name="pageTitle" 
+                               Text="Offer Details" 
+                               Style="{StaticResource HeaderTextBlockStyle}" 
+                               Grid.Column="1" 
+                               IsHitTestVisible="false" 
+                               TextWrapping="NoWrap" 
+                               VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+                </Grid>
+            </Hub.Header>
             <HubSection Header="Offer Details">
                 <DataTemplate>
-                    <StackPanel DataContext="">
-                        <TextBlock Text="Walking Dogs"/>
-                        <TextBlock Text="Near NDK"/>
+                    <StackPanel DataContext="" Width="300">
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}" FontSize="22" FontWeight="bold" Foreground="#666666" Text="Walking Dogs" Margin="0 5 0 20"/>
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}" LineHeight="30" FontSize="22" Text="I can walk your dog between 11:00 and 16:00 if you leave near NDK" TextWrapping="Wrap" Margin="0 5 0 30"/>
+                        <ListView SelectionMode="None">
+                            <ListViewItem Background="#F26862">
+                                <TextBlock TextAlignment="Center" Text="I need this service" FontSize="30" Padding="18"/>
+                            </ListViewItem>
+                        </ListView>
                     </StackPanel>
                 </DataTemplate>
             </HubSection>
@@ -21,7 +47,7 @@
                 <DataTemplate>
                     <Grid DataContext="">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="250" />
+                            <RowDefinition Height="200" />
                             <RowDefinition />
                             <RowDefinition />
                             <RowDefinition Height="70" />
@@ -45,25 +71,25 @@
                         <AppBarButton Grid.Row="3" Grid.Column="0" Icon="Contact" VerticalAlignment="Center" />
                         <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
                             <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Username"/>
-                            <TextBlock FontSize="22" Text="{Binding Username}" Margin="0 5 0 0"/>
+                            <TextBlock FontSize="22" Text="ivan" Margin="0 5 0 0"/>
                         </StackPanel>
 
                         <AppBarButton Grid.Row="4" Grid.Column="0" Icon="Mail" VerticalAlignment="Center" />
                         <StackPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
                             <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Email"/>
-                            <TextBlock FontSize="22" Text="{Binding Email}" Margin="0 5 0 0"/>
+                            <TextBlock FontSize="22" Text="ivan@ivan.com" Margin="0 5 0 0"/>
                         </StackPanel>
 
                         <AppBarButton Grid.Row="5" Grid.Column="0" Icon="Phone" VerticalAlignment="Center" />
                         <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
                             <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Mobile"/>
-                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" FontSize="22" Text="{Binding MobilePhone}" Margin="0 5 0 0"/>
+                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" FontSize="22" Text="0888888888" Margin="0 5 0 0"/>
                         </StackPanel>
 
                         <AppBarButton Grid.Row="6" Grid.Column="0" Icon="Message" VerticalAlignment="Center" />
                         <StackPanel Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
                             <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Send Message"/>
-                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="{Binding Email}"/>
+                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="SE Message"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

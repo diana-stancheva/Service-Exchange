@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ServiceExchange.Common;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -25,6 +27,12 @@ namespace ServiceExchange.Pages
         public OfferDetailsPage()
         {
             this.InitializeComponent();
+            NetworkChecker.CheckInternetConnection();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(OffersHubPage));
         }
     }
 }

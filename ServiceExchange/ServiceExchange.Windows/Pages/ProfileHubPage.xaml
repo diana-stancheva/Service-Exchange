@@ -50,12 +50,12 @@
                             <ColumnDefinition Width="100" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Ellipse Grid.Row="0" Grid.ColumnSpan="2" Height="200" Width="200" Stroke="#666666" StrokeThickness="2">
+                        <Ellipse Tapped="Ellipse_Tapped" Grid.Row="0" Grid.ColumnSpan="2" Height="200" Width="200" Stroke="#666666" StrokeThickness="2">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="../Images/profilePicture.jpg" />
+                                <ImageBrush ImageOpened="ProfileImage_ImageOpened" x:Name="ProfileImage" ImageSource=""/>
+                                <!--ImageSource="../Images/profilePicture.jpg" />//-->
                             </Ellipse.Fill>
                         </Ellipse>
-                        <!--<Image Stretch="UniformToFill" Grid.Row="0" Grid.ColumnSpan="2" Source="../Images/profilePicture.jpg" Width="400" Height="250"></Image>-->
                         <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource BaseTextBlockStyle}" Text="{Binding FullName}" Foreground="#666666" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center"/>
                         <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BaseTextBlockStyle}" Text="{Binding Converter={StaticResource CountryTownConverter}}" Foreground="#666666" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 20"/>
 

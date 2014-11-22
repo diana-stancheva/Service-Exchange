@@ -1,4 +1,5 @@
-﻿using ServiceExchange.ViewModels;
+﻿using ServiceExchange.Common;
+using ServiceExchange.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,6 +27,7 @@ namespace ServiceExchange.Pages
         public OffersHubPage()
         {
             this.InitializeComponent();
+            NetworkChecker.CheckInternetConnection();
             this.DataContext = new OffersHubPageViewModel();
         }
 

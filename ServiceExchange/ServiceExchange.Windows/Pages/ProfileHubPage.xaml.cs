@@ -1,4 +1,6 @@
-﻿using ServiceExchange.Models;
+﻿using Parse;
+using ServiceExchange.Common;
+using ServiceExchange.Models;
 using ServiceExchange.ViewModels;
 using ServiceExchange.Views;
 using System;
@@ -9,6 +11,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -16,7 +20,9 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Shapes;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,10 +37,13 @@ namespace ServiceExchange.Pages
         public TextBox SkillName { get; set; }
         public TextBox SkillDescription { get; set; }
         public ComboBox CategoryName { get; set; }
+        public Ellipse ImageContainer { get; set; }
+        public ImageBrush ProfileImage { get; set; }
 
         public ProfileHubPage()
         {
             this.InitializeComponent();
+            NetworkChecker.CheckInternetConnection();
             this.DataContext = new ProfileHubPageViewModel();
         }
 
@@ -126,6 +135,64 @@ namespace ServiceExchange.Pages
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private async void Ellipse_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var picker = new FileOpenPicker
+            {
+                ViewMode = PickerViewMode.Thumbnail,
+                CommitButtonText = "All done",
+                SuggestedStartLocation = PickerLocationId.PicturesLibrary,
+                FileTypeFilter = { ".jpg", ".jpeg", ".png", ".bmp" }
+            };
+            StorageFile file = await picker.PickSingleFileAsync();
+
+
+            //UploadFile(file);
+
+            DisplayImage(file);
+
+        }
+
+        private async void UploadFile(StorageFile file)
+        {
+            byte[] data = System.Text.Encoding.UTF8.GetBytes("User Picture Upload");
+            ParseUser currentUser = ParseUser.CurrentUser;
+            currentUser["photo"] = new ParseFile(file.Path, data);
+            await currentUser.SaveAsync();
+        }
+
+        private void DisplayImage(StorageFile file)
+        {
+            if (file == null)
+            {
+                return;
+            }
+
+            //NotifyUser(file.Path);
+            this.ProfileImage = new ImageBrush();
+            this.ProfileImage.ImageSource = new BitmapImage(
+                    new Uri(file.Path)
+                );
+        }
+
+        private static async Task NotifyUser(String message)
+        {
+            var dialog = new MessageDialog(message);
+            await dialog.ShowAsync();
+        }
+
+        private void RefreshFrame()
+        {
+            var Frame = Window.Current.Content as Frame;
+            Frame.Navigate(Frame.Content.GetType());
+            Frame.GoBack();
+        }
+
+        private void ProfileImage_ImageOpened(object sender, RoutedEventArgs e)
+        {
+            this.ProfileImage = (ImageBrush)sender;
         }
     }
 }

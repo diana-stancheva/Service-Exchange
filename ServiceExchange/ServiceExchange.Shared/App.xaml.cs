@@ -18,6 +18,10 @@ using Windows.UI.Xaml.Navigation;
 using Parse;
 using ServiceExchange.Models;
 using ServiceExchange.Pages;
+using Windows.Networking.Connectivity;
+using Windows.UI.Popups;
+using System.Threading.Tasks;
+using System.Net.NetworkInformation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -41,6 +45,12 @@ namespace ServiceExchange
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
 
+            InitializeParse();
+            
+        }
+
+        private void InitializeParse()
+        {
             ParseObject.RegisterSubclass<Comment>();
             ParseObject.RegisterSubclass<Country>();
             ParseObject.RegisterSubclass<Exchange>();
