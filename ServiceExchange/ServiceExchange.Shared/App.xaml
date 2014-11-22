@@ -9,7 +9,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/AppResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
+            
             <!-- CUSTOM SHARED STYLES -->
             <Style x:Key="SECenterHorizontalAndVertical" TargetType="TextBox">
                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -34,6 +34,28 @@
             </Style>
 
             <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrushSolidColor" Color="#4CD864" />
+
+            <!--CUSTOM TEMPLATES-->
+
+            <DataTemplate x:Key="PhoneOfferTemplate">
+                <ListViewItem Background="#FF00ABA9" Margin="3" Padding="10" Height="150" Width="150">
+                    <StackPanel HorizontalAlignment="Left">
+                        <TextBlock  Margin="10" 
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
+                    </StackPanel>
+                </ListViewItem>
+            </DataTemplate>
+
+            <DataTemplate x:Key="StoreOfferTemplate">
+                <ListViewItem Background="#FF00ABA9" Margin="3" Padding="10" Height="100" Width="240">
+                    <StackPanel HorizontalAlignment="Left">
+                        <TextBlock  Margin="10" 
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
+                    </StackPanel>
+                </ListViewItem>
+            </DataTemplate>
 
             <ControlTemplate x:Key="SETextBoxControlTemplate" TargetType="TextBox">
                 <Grid>

@@ -12,17 +12,26 @@
         <Hub Header="ServiseExchange Offers">
             <HubSection Header="Home">
                 <DataTemplate>
-                    <views:OffersUserControl />
+                    <ListView ItemsSource="{Binding Skills}" 
+                              ItemTemplate="{StaticResource PhoneOfferTemplate}"
+                              SelectionMode="Single" 
+                              SelectionChanged="OffersControl_SelectionChanged">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid Margin="3" HorizontalAlignment="Stretch" Orientation="Horizontal" MaximumRowsOrColumns="2"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
                 </DataTemplate>
             </HubSection>
             <HubSection Header="Lifestyle">
                 <DataTemplate>
-                    <views:OffersUserControl />
+                    <views:OffersUserControl/>
                 </DataTemplate>
             </HubSection>
             <HubSection Header="Animals">
                 <DataTemplate>
-                    <views:OffersUserControl />
+                    <views:OffersUserControl/>
                 </DataTemplate>
             </HubSection>
         </Hub>

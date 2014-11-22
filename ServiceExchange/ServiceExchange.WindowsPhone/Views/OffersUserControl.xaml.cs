@@ -23,5 +23,11 @@ namespace ServiceExchange.Views
         {
             this.InitializeComponent();
         }
+
+        private void OffersControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listView = (sender as ListView);
+            var selectedItem = listView.SelectedItem;
+        }
     }
 }

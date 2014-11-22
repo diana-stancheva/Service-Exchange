@@ -9,20 +9,26 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <ListView x:Name="OffersControl" ItemsSource="{Binding Skills}" SelectionMode="None">
-        <!--<GridView.ItemsPanel>
+    <ListView x:Name="OffersControl" 
+              ItemsSource="{Binding Skills}" 
+              SelectionMode="Single" 
+              SelectionChanged="OffersControl_SelectionChanged">
+        <ListView.ItemsPanel>
             <ItemsPanelTemplate>
-                <ItemsWrapGrid Margin="3" HorizontalAlignment="Stretch" Orientation="Horizontal" MaximumRowsOrColumns="1"/>
+                <!--<VariableSizedWrapGrid ItemHeight="150" ItemWidth="150"  Margin="3" HorizontalAlignment="Stretch" Orientation="Horizontal" MaximumRowsOrColumns="2"/>-->
+                <ItemsWrapGrid Margin="3" HorizontalAlignment="Stretch" Orientation="Horizontal" MaximumRowsOrColumns="2"/>
             </ItemsPanelTemplate>
-        </GridView.ItemsPanel>-->
+        </ListView.ItemsPanel>
 
         <ListView.ItemTemplate>
             <DataTemplate>
-                <GridViewItem Background="#FF00ABA9" Margin="3" Padding="10" Width="350">
+                <ListViewItem Background="#FF00ABA9" Margin="3" Padding="10" Height="150" Width="150">
                     <StackPanel HorizontalAlignment="Left">
-                        <TextBlock TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
+                        <TextBlock  Margin="10" 
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
                     </StackPanel>
-                </GridViewItem>
+                </ListViewItem>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

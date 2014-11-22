@@ -28,5 +28,11 @@ namespace ServiceExchange.Pages
             this.InitializeComponent();
             this.DataContext = new OffersHubPageViewModel();
         }
+
+        private void OffersControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listView = (sender as ListView);
+            var selectedItem = listView.SelectedItem;
+        }
     }
 }

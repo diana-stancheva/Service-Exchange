@@ -9,22 +9,22 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <GridView x:Name="OffersControl" ItemsSource="{Binding Skills}" SelectionMode="None">
-        <GridView.ItemsPanel>
+    <ListView x:Name="OffersControl" ItemsSource="{Binding Skills}" SelectionMode="Single" SelectionChanged="OffersControl_SelectionChanged">
+        <ListView.ItemsPanel>
             <ItemsPanelTemplate>
                 <ItemsWrapGrid Margin="3" ItemWidth="240" Orientation="Horizontal" MaximumRowsOrColumns="3"/>
             </ItemsPanelTemplate>
-        </GridView.ItemsPanel>
+        </ListView.ItemsPanel>
 
-        <GridView.ItemTemplate>
+        <ListView.ItemTemplate>
             <DataTemplate>
-                <GridViewItem Background="#FF00ABA9" Margin="0" Width="240" Padding="10">
+                <ListViewItem Background="#FF00ABA9" Margin="0" Width="240" Height="100" Padding="10">
                     <StackPanel HorizontalAlignment="Left">
-                        <TextBlock TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
-                        <TextBlock TextAlignment="Left" TextWrapping="Wrap" Text="{Binding User}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
+                        <TextBlock TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" FontSize="20" Foreground="#FFFFFF" FontWeight="Bold"/>
+                        <TextBlock TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Description}" FontSize="18" Foreground="#E9EEEE"/>
                     </StackPanel>
-                </GridViewItem>
+                </ListViewItem>
             </DataTemplate>
-        </GridView.ItemTemplate>
-    </GridView>
+        </ListView.ItemTemplate>
+    </ListView>
 </UserControl>

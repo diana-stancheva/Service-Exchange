@@ -13,13 +13,16 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace ServiceExchange.Views
+namespace ServiceExchange.Pages
 {
-    public sealed partial class PopUpUserControl : UserControl
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class OfferDetailsPage : Page
     {
-        public PopUpUserControl()
+        public OfferDetailsPage()
         {
             this.InitializeComponent();
         }
