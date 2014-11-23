@@ -50,8 +50,7 @@ namespace ServiceExchange.Pages
             catch (Exception ex)
             {
                 // The login failed. Check the error to see why.
-                var dialog = new MessageDialog(ex.Message);
-                dialog.ShowAsync();
+                UIHelpers.NotifyUser(ex.Message);
             }
         }
     }

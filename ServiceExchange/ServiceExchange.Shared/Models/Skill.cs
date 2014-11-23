@@ -14,21 +14,45 @@ namespace ServiceExchange.Models
         public string Name
         {
             get { return GetProperty<string>(); }
-            set { SetProperty<string>(value); }
+            set 
+            {
+                if (value == String.Empty)
+                {
+                    throw new ArgumentException();
+                }
+
+                SetProperty<string>(value); 
+            }
         }
 
         [ParseFieldName("description")]
         public string Description
         {
             get { return GetProperty<string>(); }
-            set { SetProperty<string>(value); }
+            set 
+            {
+                if (value == String.Empty)
+                {
+                    throw new ArgumentException();
+                }
+
+                SetProperty<string>(value); 
+            }
         }
 
         [ParseFieldName("skillCategory")]
         public SkillCategory SkillCategory
         {
             get { return GetProperty<SkillCategory>(); }
-            set { SetProperty<SkillCategory>(value); }
+            set 
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException();
+                }
+
+                SetProperty<SkillCategory>(value);
+            }
         }
 
         [ParseFieldName("views")]

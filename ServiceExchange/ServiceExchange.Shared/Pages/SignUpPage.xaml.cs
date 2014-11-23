@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
 using Parse;
 using ServiceExchange.Common;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.Storage.Streams;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -40,25 +42,105 @@ namespace ServiceExchange.Pages
 
         public async void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
-            var user = new User()
+            var user = new User();
+
+            try
             {
-                Username = this.username.Text,
-                Password = this.password.Password,
-                Email = this.email.Text,
-                FullName = this.fullName.Text,
-                Country = this.country.Text,
-                Town = this.town.Text
-            };
+                user.MobilePhone = this.mobilePhone.Text;
+            }
+            catch (ArgumentException ex)
+            {
+                UIHelpers.NotifyUser("Mobile Phone Is Required");
+            }
+
+            try
+            {
+                user.Email = this.email.Text;
+            }
+            catch (ArgumentException ex)
+            {
+                UIHelpers.NotifyUser("Email Is Required");
+            }
+
+            try
+            {
+                user.FullName = this.fullName.Text;
+            }
+            catch (ArgumentException ex)
+            {
+                UIHelpers.NotifyUser("Full Name Is Required");
+            }
+
+            try
+            {
+                user.Country = this.country.Text;
+            }
+            catch (ArgumentException ex)
+            {
+                UIHelpers.NotifyUser("Country  Is Required");
+            }
+
+
+            try
+            {
+                user.Town = this.town.Text;
+            }
+            catch (ArgumentException ex)
+            {
+                UIHelpers.NotifyUser("Town  Is Required");
+            }
+            try
+            {
+                user.Username = this.username.Text;
+            }
+            catch (ArgumentException ex)
+            {
+                UIHelpers.NotifyUser("Username Is Required");
+            }
+
+            try
+            {
+                user.Password = this.password.Password;
+            }
+            catch (ArgumentException ex)
+            {
+                UIHelpers.NotifyUser("Password Is Required");
+            }
 
             try
             {
                 await user.SignUpAsync();
+                AddPictureToProfile();
                 this.Frame.Navigate(typeof(SignUpSuccessPage));
             }
             catch (Exception ex)
             {
-                var dialog = new MessageDialog(ex.Message);
-                dialog.ShowAsync();
+                UIHelpers.NotifyUser(ex.Message);
+            }
+        }
+
+        private async void AddPictureToProfile()
+        {
+            BitmapImage bitmapImage = new BitmapImage(new Uri(@"http://mingus02.ist.berkeley.edu/static/img/user_default.jpg", UriKind.RelativeOrAbsolute));
+            RandomAccessStreamReference rasr = RandomAccessStreamReference.CreateFromUri(bitmapImage.UriSource);
+            var streamWithContent = await rasr.OpenReadAsync();
+            byte[] buffer = new byte[streamWithContent.Size];
+            try
+            {
+                await streamWithContent.ReadAsync(buffer.AsBuffer(), (uint)streamWithContent.Size, InputStreamOptions.None);
+                var data = buffer;
+                if (data != null)
+                {
+                    var user = ParseUser.CurrentUser;
+                    ParseFile img = new ParseFile("picture.png", data);
+                    user["photo"] = img;
+                    await user.SaveAsync();
+                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
             }
         }
     }

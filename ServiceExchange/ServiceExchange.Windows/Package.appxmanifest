@@ -30,11 +30,29 @@
             </SupportedFileTypes>
           </FileTypeAssociation>
         </Extension>
+        <Extension Category="windows.fileOpenPicker">
+          <FileOpenPicker>
+            <SupportedFileTypes>
+              <FileType>.jpg</FileType>
+              <FileType>.jpeg</FileType>
+              <FileType>.png</FileType>
+            </SupportedFileTypes>
+          </FileOpenPicker>
+        </Extension>
       </Extensions>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
     <Capability Name="picturesLibrary" />
+    <Capability Name="internetClientServer" />
+    <Capability Name="sharedUserCertificates" />
+    <Capability Name="removableStorage" />
+    <Capability Name="videosLibrary" />
+    <Capability Name="privateNetworkClientServer" />
+    <Capability Name="enterpriseAuthentication" />
+    <DeviceCapability Name="location" />
+    <DeviceCapability Name="proximity" />
+    <DeviceCapability Name="webcam" />
   </Capabilities>
 </Package>

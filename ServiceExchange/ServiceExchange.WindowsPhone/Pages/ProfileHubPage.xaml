@@ -29,9 +29,9 @@
                             <ColumnDefinition Width="100" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Ellipse Grid.Row="0" Grid.ColumnSpan="2" Height="100" Width="100" Stroke="#666666" StrokeThickness="2">
+                        <Ellipse Tapped="Ellipse_Tapped" Grid.Row="0" Grid.ColumnSpan="2" Height="100" Width="100" Stroke="#666666" StrokeThickness="2">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="../Images/profilePicture.jpg" />
+                                <ImageBrush ImageSource="{Binding PhotoString}"  ImageOpened="ProfileImage_ImageOpened"/>
                             </Ellipse.Fill>
                         </Ellipse>
                         <!--<Image Stretch="UniformToFill" Grid.Row="0" Grid.ColumnSpan="2" Source="../Images/profilePicture.jpg" Width="400" Height="250"></Image>-->

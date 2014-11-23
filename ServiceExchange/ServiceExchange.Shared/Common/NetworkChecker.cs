@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace ServiceExchange.Common
 {
-    public static class NetworkChecker
+    public class NetworkChecker
     {
         public static void CheckForInternetConnection()
         {

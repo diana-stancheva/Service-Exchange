@@ -52,7 +52,7 @@
                         </Grid.ColumnDefinitions>
                         <Ellipse Tapped="Ellipse_Tapped" Grid.Row="0" Grid.ColumnSpan="2" Height="200" Width="200" Stroke="#666666" StrokeThickness="2">
                             <Ellipse.Fill>
-                                <ImageBrush ImageOpened="ProfileImage_ImageOpened" x:Name="ProfileImage" ImageSource=""/>
+                                <ImageBrush ImageOpened="ProfileImage_ImageOpened" x:Name="ProfileImage" ImageSource="{Binding PhotoString}"/>
                                 <!--ImageSource="../Images/profilePicture.jpg" />//-->
                             </Ellipse.Fill>
                         </Ellipse>

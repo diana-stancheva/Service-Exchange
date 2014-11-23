@@ -15,6 +15,7 @@ namespace ServiceExchange.ViewModels
     {
         private ObservableCollection<SkillViewModel> skills;
         private bool loader;
+        private User currentUser;
 
         public ProfileHubPageViewModel()
         {
@@ -22,21 +23,44 @@ namespace ServiceExchange.ViewModels
             this.LoadSkills();
         }
 
-        public User CurrentUser { get; set; }
+        public User CurrentUser
+        {
+            get
+            {
+                if (this.currentUser == null)
+                {
+                    this.currentUser = new User();
+                }
+                return this.currentUser;
+            }
+            set
+            {
+                if (this.currentUser == null)
+                {
+                    this.currentUser = new User();
+                }
 
-        public bool Loader { 
-            get 
+                this.currentUser = value;
+
+                this.RaisePropertyChanged(() => this.CurrentUser);
+            }
+        }
+
+        public bool Loader
+        {
+            get
             {
                 return this.loader;
-            } 
-            set 
+            }
+            set
             {
                 this.loader = value;
                 this.RaisePropertyChanged(() => this.Loader);
-            } 
+            }
         }
 
-        public IEnumerable<SkillViewModel> Skills { 
+        public IEnumerable<SkillViewModel> Skills
+        {
             get
             {
                 if (this.skills == null)
@@ -44,8 +68,8 @@ namespace ServiceExchange.ViewModels
                     this.Skills = new ObservableCollection<SkillViewModel>();
                 }
                 return this.skills;
-            } 
-            set 
+            }
+            set
             {
                 if (this.skills == null)
                 {
@@ -59,11 +83,28 @@ namespace ServiceExchange.ViewModels
                 }
 
                 this.RaisePropertyChanged(() => this.Skills);
-            } 
+            }
         }
 
         private void GetCurrentUser()
         {
+            string photoStr = null;
+
+            try
+            {
+                photoStr = ParseUser.CurrentUser.Get<ParseFile>("photo").Url.ToString();
+            }
+            catch
+            {
+                if (photoStr == null)
+                {
+                    photoStr = "http://mingus02.ist.berkeley.edu/static/img/user_default.jpg";
+                }
+            }
+
+
+
+
             this.CurrentUser = new User
             {
                 FullName = ParseUser.CurrentUser.Get<string>("fullName"),
@@ -71,13 +112,17 @@ namespace ServiceExchange.ViewModels
                 Email = ParseUser.CurrentUser.Email,
                 Country = ParseUser.CurrentUser.Get<string>("country"),
                 Town = ParseUser.CurrentUser.Get<string>("town"),
-                MobilePhone = ParseUser.CurrentUser.Get<string>("mobilePhone")
+                MobilePhone = ParseUser.CurrentUser.Get<string>("mobilePhone"),
+                //Photo = ParseUser.CurrentUser.Get<ParseFile>("photo"),
+                PhotoString = photoStr
             };
+
+
         }
 
         private async Task LoadSkills()
         {
-            var skills = await new ParseQuery<Skill>().FindAsync();
+            var skills = await new ParseQuery<Skill>().Where(skill => skill.User == ParseUser.CurrentUser).FindAsync();
             this.Skills = skills.AsQueryable().Select(SkillViewModel.FromModel);
         }
     }

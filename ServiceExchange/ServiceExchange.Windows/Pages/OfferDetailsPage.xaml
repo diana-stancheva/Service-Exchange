@@ -37,7 +37,7 @@
                         <TextBlock Style="{StaticResource BodyTextBlockStyle}" LineHeight="30" FontSize="22" Text="I can walk your dog between 11:00 and 16:00 if you leave near NDK" TextWrapping="Wrap" Margin="0 5 0 30"/>
                         <ListView SelectionMode="None">
                             <ListViewItem Background="#F26862">
-                                <TextBlock TextAlignment="Center" Text="I need this service" FontSize="30" Padding="18"/>
+                                <TextBlock Tapped="ServiceRequest_Tapped" TextAlignment="Center" Text="I need this service" FontSize="30" Padding="18"/>
                             </ListViewItem>
                         </ListView>
                     </StackPanel>

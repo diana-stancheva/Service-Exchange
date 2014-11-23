@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\UIHelpers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\CountryTownConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Comment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Country.cs" />

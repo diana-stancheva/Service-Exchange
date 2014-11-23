@@ -15,7 +15,7 @@
                 <TextBox Name="fullName" PlaceholderText="FullName" Style="{StaticResource SETextBox}" />
                 <TextBox Name="username" PlaceholderText="Username" Style="{StaticResource SETextBox}" />
                 <PasswordBox Name="password" PlaceholderText="Password" Style="{StaticResource SEPasswordBox}" />
-                <PasswordBox Name="password2" PlaceholderText="Re-Type Password" Style="{StaticResource SEPasswordBox}"  />
+                <TextBox Name="mobilePhone" PlaceholderText="Mobile Phone" Style="{StaticResource SETextBox}" />
                 <TextBox Name="email" PlaceholderText="Email" Style="{StaticResource SETextBox}" />
                 <TextBox Name="country" PlaceholderText="Country" Style="{StaticResource SETextBox}" />
                 <TextBox Name="town" PlaceholderText="Town" Style="{StaticResource SETextBox}" />

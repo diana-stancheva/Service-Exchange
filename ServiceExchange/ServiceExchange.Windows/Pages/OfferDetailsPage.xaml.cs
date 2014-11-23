@@ -1,4 +1,5 @@
 ﻿using ServiceExchange.Common;
+using ServiceExchange.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,14 @@ namespace ServiceExchange.Pages
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(OffersHubPage));
+        }
+
+        private void ServiceRequest_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var exchange = new ExchangeViewModel
+            {
+
+            };
         }
     }
 }
