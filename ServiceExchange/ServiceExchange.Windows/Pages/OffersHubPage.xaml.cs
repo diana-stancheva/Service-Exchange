@@ -36,7 +36,7 @@ namespace ServiceExchange.Pages
             var listView = (sender as ListView);
             var selectedItem = listView.SelectedItem;
 
-            this.Frame.Navigate(typeof(OfferDetailsPage));
+            this.Frame.Navigate(typeof(OfferDetailsPage), selectedItem);
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

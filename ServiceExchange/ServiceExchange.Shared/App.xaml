@@ -48,11 +48,14 @@
             </DataTemplate>
 
             <DataTemplate x:Key="StoreOfferTemplate">
-                <ListViewItem Background="#FF00ABA9" Margin="3" Padding="10" Height="100" Width="240">
+                <ListViewItem Background="#FF00ABA9" Margin="3" Padding="10" Height="150" Width="260">
                     <StackPanel HorizontalAlignment="Left">
                         <TextBlock  Margin="10" 
                           HorizontalAlignment="Left"
                           VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
+                        <TextBlock
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Description}" FontSize="18" Foreground="#E9EEEE"/>
                     </StackPanel>
                 </ListViewItem>
             </DataTemplate>

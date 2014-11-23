@@ -32,7 +32,7 @@
             </Hub.Header>
             <HubSection Header="Offer Details">
                 <DataTemplate>
-                    <StackPanel DataContext="" Width="300">
+                    <StackPanel Width="300">
                         <TextBlock Style="{StaticResource BodyTextBlockStyle}" FontSize="22" FontWeight="bold" Foreground="#666666" Text="Walking Dogs" Margin="0 5 0 20"/>
                         <TextBlock Style="{StaticResource BodyTextBlockStyle}" LineHeight="30" FontSize="22" Text="I can walk your dog between 11:00 and 16:00 if you leave near NDK" TextWrapping="Wrap" Margin="0 5 0 30"/>
                         <ListView SelectionMode="None">
@@ -45,7 +45,7 @@
             </HubSection>
             <HubSection Header="Information">
                 <DataTemplate>
-                    <Grid DataContext="">
+                    <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="200" />
                             <RowDefinition />
@@ -61,35 +61,35 @@
                         </Grid.ColumnDefinitions>
                         <Ellipse Grid.Row="0" Grid.ColumnSpan="2" Height="200" Width="200" Stroke="#666666" StrokeThickness="2">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="../Images/profilePicture.jpg" />
+                                <ImageBrush ImageSource="http://files.parsetfss.com/d8e56eac-46d4-470e-997c-202ac9adcf4b/tfss-722c6dd1-9753-4d4f-84b4-3c96b48ee1e9-picture.png" />
                             </Ellipse.Fill>
                         </Ellipse>
                         <!--<Image Stretch="UniformToFill" Grid.Row="0" Grid.ColumnSpan="2" Source="../Images/profilePicture.jpg" Width="400" Height="250"></Image>-->
-                        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource BaseTextBlockStyle}" Text="" Foreground="#666666" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource BaseTextBlockStyle}" Text="" Foreground="#666666" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
                         <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource BaseTextBlockStyle}" Text="" Foreground="#666666" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 20"/>
 
                         <AppBarButton Grid.Row="3" Grid.Column="0" Icon="Contact" VerticalAlignment="Center" />
                         <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
-                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Username"/>
-                            <TextBlock FontSize="22" Text="ivan" Margin="0 5 0 0"/>
+                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Ivan Ivanov" Foreground="#666666"/>
+                            <TextBlock FontSize="22" Text="Bulgaria, Sofia" Margin="0 5 0 0" Foreground="#666666"/>
                         </StackPanel>
 
                         <AppBarButton Grid.Row="4" Grid.Column="0" Icon="Mail" VerticalAlignment="Center" />
                         <StackPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
-                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Email"/>
-                            <TextBlock FontSize="22" Text="ivan@ivan.com" Margin="0 5 0 0"/>
+                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Email" Foreground="#666666"/>
+                            <TextBlock FontSize="22" Text="ivan@ivan.com" Margin="0 5 0 0" Foreground="#666666"/>
                         </StackPanel>
 
                         <AppBarButton Grid.Row="5" Grid.Column="0" Icon="Phone" VerticalAlignment="Center" />
                         <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
-                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Mobile"/>
-                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" FontSize="22" Text="0888888888" Margin="0 5 0 0"/>
+                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Mobile" Foreground="#666666"/>
+                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" FontSize="22" Text="0888888888" Margin="0 5 0 0" Foreground="#666666"/>
                         </StackPanel>
 
                         <AppBarButton Grid.Row="6" Grid.Column="0" Icon="Message" VerticalAlignment="Center" />
                         <StackPanel Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
-                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Send Message"/>
-                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="SE Message"/>
+                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Text="Send Message" Foreground="#666666"/>
+                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="SE Message" Foreground="#666666"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

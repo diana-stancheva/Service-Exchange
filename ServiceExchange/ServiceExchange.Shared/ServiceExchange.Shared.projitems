@@ -41,6 +41,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SignUpSuccessPage.xaml.cs">
       <DependentUpon>SignUpSuccessPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OfferDetailsPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OffersHubPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileHubPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ExchangeViewModel.cs" />

@@ -11,17 +11,17 @@ namespace ServiceExchange.Models
     public class Exchange : ParseObject
     {
         [ParseFieldName("providerUser")]
-        public User ProviderUser
+        public ParseUser ProviderUser
         {
-            get { return GetProperty<User>(); }
-            set { SetProperty<User>(value); }
+            get { return GetProperty<ParseUser>(); }
+            set { SetProperty<ParseUser>(value); }
         }
 
         [ParseFieldName("searcherUser")]
-        public User SearcherUser
+        public ParseUser SearcherUser
         {
-            get { return GetProperty<User>(); }
-            set { SetProperty<User>(value); }
+            get { return GetProperty<ParseUser>(); }
+            set { SetProperty<ParseUser>(value); }
         }
 
         [ParseFieldName("exchangeStatus")]

@@ -69,6 +69,7 @@ namespace ServiceExchange
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            //RegisterParseNotifications();
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -125,6 +126,11 @@ namespace ServiceExchange
 
             // Ensure the current window is active
             Window.Current.Activate();
+        }
+
+        private async void RegisterParseNotifications()
+        {
+            await ParseInstallation.CurrentInstallation.SaveAsync();
         }
 
 #if WINDOWS_PHONE_APP

@@ -1,4 +1,5 @@
-﻿using ServiceExchange.Models;
+﻿using Parse;
+using ServiceExchange.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -16,16 +17,16 @@ namespace ServiceExchange.ViewModels
                     new SkillViewModel()
                     {
                         Name = skill.Name,
-                        Category = skill.SkillCategory.Name,
+                        Category = skill.SkillCategory,
                         Description = skill.Description,
-                        User = skill.User.Username
+                        User = skill.User
                     };
             }
         }
 
         public string Name { get; set; }
-        public string Category { get; set; }
+        public SkillCategory Category { get; set; }
         public string Description { get; set; }
-        public string User { get; set; }
+        public ParseUser User { get; set; }
     }
 }

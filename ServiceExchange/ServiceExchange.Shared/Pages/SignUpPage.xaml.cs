@@ -107,6 +107,8 @@ namespace ServiceExchange.Pages
                 UIHelpers.NotifyUser("Password Is Required");
             }
 
+            user.Raiting = 0;
+
             try
             {
                 await user.SignUpAsync();
