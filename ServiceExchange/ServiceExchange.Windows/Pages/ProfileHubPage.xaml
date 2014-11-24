@@ -145,7 +145,7 @@
                                 <DataTemplate>
                                     <ListViewItem Background="#FF00ABA9" Margin="0" Width="240" Padding="10">
                                         <StackPanel HorizontalAlignment="Left">
-                                            <TextBlock TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
+                                            <TextBlock TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
                                         </StackPanel>
                                     </ListViewItem>
                                 </DataTemplate>

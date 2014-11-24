@@ -17,17 +17,11 @@ using Windows.UI.Xaml.Navigation;
 
 namespace ServiceExchange.Views
 {
-    public sealed partial class OffersUserControl : UserControl
+    public sealed partial class FriendsUserControl : UserControl
     {
-        public OffersUserControl()
+        public FriendsUserControl()
         {
             this.InitializeComponent();
-        }
-
-        private void OffersControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var listView = (sender as ListView);
-            var selectedItem = listView.SelectedItem;
         }
     }
 }

@@ -29,6 +29,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Skill.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SkillCategory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\FriendsPage.xaml.cs">
+      <DependentUpon>FriendsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -41,6 +44,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SignUpSuccessPage.xaml.cs">
       <DependentUpon>SignUpSuccessPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SQLiteAsync.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SQLModels\Contact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FriendsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OfferDetailsPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OffersHubPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileHubPageViewModel.cs" />
@@ -51,6 +58,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\FriendsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

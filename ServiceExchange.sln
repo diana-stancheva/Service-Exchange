@@ -11,6 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceExchange.Windows", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceExchange.WindowsPhone", "ServiceExchange\ServiceExchange.WindowsPhone\ServiceExchange.WindowsPhone.csproj", "{98318BB3-1CBB-4152-8779-486E88F60AB3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7785FA34-9A52-4B54-AAB6-E7539C092E5F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		ServiceExchange\ServiceExchange.Shared\ServiceExchange.Shared.projitems*{fbefa3fe-6f9e-43da-ae59-3f7d97b3eaeb}*SharedItemsImports = 13

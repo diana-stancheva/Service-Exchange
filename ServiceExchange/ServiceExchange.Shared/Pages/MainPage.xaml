@@ -29,7 +29,7 @@
             <ListViewItem Background="#FF00ABA9" Margin="5" Tapped="TextBlock_Tapped">
                 <TextBlock Text="Settings" FontSize="20" Foreground="#ffffff" FontWeight="Bold" Padding="20" Margin="5"/>
             </ListViewItem>
-            <ListViewItem Background="#FF00ABA9" Margin="5" Tapped="TextBlock_Tapped">
+            <ListViewItem Background="#FF00ABA9" Margin="5" Tapped="FriendsTextBlock_Tapped">
                 <TextBlock Text="Friends" FontSize="20" Foreground="#ffffff" FontWeight="Bold" Padding="20" Margin="5"/>
             </ListViewItem>
         </ListView>

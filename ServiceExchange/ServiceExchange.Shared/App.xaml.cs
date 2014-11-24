@@ -22,6 +22,9 @@ using Windows.Networking.Connectivity;
 using Windows.UI.Popups;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
+using Windows.Storage;
+using SQLite;
+using ServiceExchange.SQLModels;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -32,6 +35,7 @@ namespace ServiceExchange
     /// </summary>
     public sealed partial class App : Application
     {
+        private const string dbName = "Contacts.db";
 #if WINDOWS_PHONE_APP
         private TransitionCollection transitions;
 #endif
@@ -46,7 +50,8 @@ namespace ServiceExchange
             this.Suspending += this.OnSuspending;
 
             InitializeParse();
-            
+            CreateDbIfNotExist();
+
         }
 
         private void InitializeParse()
@@ -126,7 +131,44 @@ namespace ServiceExchange
 
             // Ensure the current window is active
             Window.Current.Activate();
+
+            
         }
+
+
+        #region SQLite utils
+
+        private async void CreateDbIfNotExist()
+        {
+            bool dbExists = await CheckDbAsync(dbName);
+
+            if (!dbExists)
+            {
+                await CreateDatabaseAsync();
+            }
+        }
+
+        private async Task<bool> CheckDbAsync(string dbName)
+        {
+            bool dbExist = true;
+            try
+            {
+                StorageFile sf = await ApplicationData.Current.LocalFolder.GetFileAsync(dbName);
+            }
+            catch (Exception)
+            {
+                dbExist = false;
+            }
+            return dbExist;
+        }
+
+        private async Task CreateDatabaseAsync()
+        {
+
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
+            await conn.CreateTableAsync<Contact>();
+        }
+        #endregion SQLite utils
 
         private async void RegisterParseNotifications()
         {

@@ -38,5 +38,10 @@ namespace ServiceExchange.Pages
         {
             this.Frame.Navigate(typeof(ProfileHubPage));
         }
+
+        private void FriendsTextBlock_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FriendsPage));
+        }
     }
 }

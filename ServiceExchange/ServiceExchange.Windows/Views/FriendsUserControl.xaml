@@ -1,0 +1,34 @@
+﻿<UserControl
+    x:Class="ServiceExchange.Views.FriendsUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ServiceExchange.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <ListView x:Name="FriendsView" ItemsSource="{Binding Friends}" SelectionMode="None">
+        <ListView.ItemsPanel>
+            <ItemsPanelTemplate>
+                <ItemsWrapGrid Margin="3" HorizontalAlignment="Stretch" Orientation="Horizontal" MaximumRowsOrColumns="2"/>
+            </ItemsPanelTemplate>
+        </ListView.ItemsPanel>
+        <ListViewItem Background="#FF00ABA9" Margin="3" Padding="10" Height="150" Width="260">
+            <DataTemplate>
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock  Margin="10" 
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Title}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
+                    <TextBlock
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding PhoneNumber}" FontSize="18" Foreground="#E9EEEE"/>
+                    <TextBlock
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Email}" FontSize="18" Foreground="#E9EEEE"/>
+                </StackPanel>
+            </DataTemplate>
+        </ListViewItem>
+    </ListView>
+</UserControl>

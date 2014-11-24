@@ -9,7 +9,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/AppResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            
+
             <!-- CUSTOM SHARED STYLES -->
             <Style x:Key="SECenterHorizontalAndVertical" TargetType="TextBox">
                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -56,6 +56,22 @@
                         <TextBlock
                           HorizontalAlignment="Left"
                           VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Description}" FontSize="18" Foreground="#E9EEEE"/>
+                    </StackPanel>
+                </ListViewItem>
+            </DataTemplate>
+
+            <DataTemplate x:Key="FriendsTemplate">
+                <ListViewItem Background="#FF00ABA9" Margin="3" Padding="10" Height="150" Width="260">
+                    <StackPanel HorizontalAlignment="Left">
+                        <TextBlock  Margin="10" 
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Title}" FontSize="20" Foreground="#E9EEEE" FontWeight="Bold"/>
+                        <TextBlock
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding PhoneNumber}" FontSize="18" Foreground="#E9EEEE"/>
+                        <TextBlock
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Bottom" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Email}" FontSize="18" Foreground="#E9EEEE"/>
                     </StackPanel>
                 </ListViewItem>
             </DataTemplate>
